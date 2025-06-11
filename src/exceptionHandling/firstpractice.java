@@ -1,0 +1,31 @@
+package exceptionHandling;
+
+public class firstpractice {
+    public static void main(String args[]){
+        System.out.println("Program Start...");
+
+        try {
+            int n1 = Integer.parseInt(args[0]);
+            int n2 = Integer.parseInt(args[1]);
+
+            System.out.println("We have got two numbers: ");
+
+            int result = n1 / n2;
+
+            System.out.println("Division is " + result);
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Please provide two numbers as command-line arguments.");
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Please ensure both inputs are valid integers.");
+        }
+        catch (ArithmeticException e) {
+            System.out.println("n2 cannot be 0!!!");
+            System.out.println(e.getMessage());
+        }
+
+
+        System.out.println("Program end...");
+    }
+}
