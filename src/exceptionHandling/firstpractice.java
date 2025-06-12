@@ -24,6 +24,10 @@ public class firstpractice {
             System.out.println("n2 cannot be 0!!!");
             System.out.println(e.getMessage());
         }
+        finally {
+            System.out.println("I am in the finally block: ");
+            System.out.println("So please close all the resources...");
+        }
 
 
         System.out.println("Program end...");
