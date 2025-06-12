@@ -1,20 +1,18 @@
 package exceptionHandling;
 
-// create custom exception
-class AgeInvalidException extends Exception{
-    AgeInvalidException(){
+// Custom Exception
+class AgeInvalidException extends Exception {
+    AgeInvalidException() {
         super("Age is Invalid !!");
     }
 
-    AgeInvalidException(String message){
+    AgeInvalidException(String message) {
         super(message);
     }
 }
 
-AgeInvalidException ex = new AgeInvalidException();
-
-public class firstpractice {
-    public void main(String args[]){
+class FirstPractice {
+    public static void main(String[] args) {
         System.out.println("Program Start...");
 
         try {
@@ -25,12 +23,11 @@ public class firstpractice {
 
             int result = n1 / n2;
 
-            if(n2 < 10){
+            if (n2 < 10) {
                 throw new AgeInvalidException("My age is Invalid !!");
             }
 
             System.out.println("Division is " + result);
-
         }
         catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Please provide two numbers as command-line arguments.");
@@ -42,19 +39,18 @@ public class firstpractice {
             System.out.println("n2 cannot be 0!!!");
             System.out.println(e.getMessage());
         }
-        catch(AgeInvalidException e){
-            System.out.println("Age is Invalid !! ");
+        catch (AgeInvalidException e) {
+            System.out.println("AgeInvalidException: " + e.getMessage());
         }
         finally {
-            System.out.println("I am in the finally block: ");
+            System.out.println("I am in the finally block:");
             System.out.println("So please close all the resources...");
         }
-
 
         System.out.println("Program end...");
     }
 }
 
-class Tommy{
-
+// Dummy class for structure (not required for functionality)
+class Tommy {
 }
