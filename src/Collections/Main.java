@@ -24,8 +24,29 @@ public class Main {
         name.add("Rohan ");
         name.add("Mosad ");
         System.out.println(name);
-        System.out.println(name.get(0));
-        System.out.println(name.get(3));
+//        System.out.println(name.get(0));
+//        System.out.println(name.get(3));
+
+        // remove
+        name.remove("Mosad ");
+        System.out.println(name);
+
+        // for removing
+        System.out.println("SIZE : " + name.size());
+
+        // for checking that element are not
+        System.out.println(name.contains("Ameer "));
+
+        // check for empty
+        System.out.println(name.isEmpty());
+
+        //set the name by your own mean
+        name.add(1, "RAM");
+        System.out.println(name);
+
+        // clear all
+        name.clear();
+        System.out.println(name);
 
         // OR
         System.out.println(name.getFirst());
@@ -35,5 +56,9 @@ public class Main {
 
         // Un type safe collection
         LinkedList list = new LinkedList();
+        list.add("Ameer ");
+        list.add(237);
+        list.add(625.98);
+        System.out.println(list);
     }
 }
