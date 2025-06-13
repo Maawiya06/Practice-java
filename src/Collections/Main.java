@@ -1,7 +1,6 @@
 package Collections;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Main {
     public static void main(String args[]){
@@ -45,8 +44,8 @@ public class Main {
         System.out.println(name);
 
         // clear all
-        name.clear();
-        System.out.println(name);
+//        name.clear();
+//        System.out.println(name);
 
         // OR
         System.out.println(name.getFirst());
@@ -60,5 +59,24 @@ public class Main {
         list.add(237);
         list.add(625.98);
         System.out.println(list);
+
+        System.out.println("Vector________________________________________________________________________");
+
+        // create a vector
+        Vector<String> vector = new Vector<>();
+        vector.addAll(name);
+        System.out.println("VECTOR " + vector);
+
+        System.out.println("Hashset________________________________________________________________________");
+        HashSet<Double> nms = new HashSet<>();
+        nms.add(14.12);
+        nms.add(65.2589650);
+        nms.add(45.25);
+        System.out.println(nms);
+
+        System.out.println("Treeset..........................................................................");
+        TreeSet<Double> tree = new TreeSet<>();
+        tree.addAll(nms);
+        System.out.println(tree);
     }
 }
