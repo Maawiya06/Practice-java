@@ -20,6 +20,16 @@ public class Main {
         ArrayList<String> name = new ArrayList<>();
         ArrayList<Integer> number  = new ArrayList<>();
         name.add("Ameer ");
+        name.add("Maawiya ");
+        name.add("Rohan ");
+        name.add("Mosad ");
+        System.out.println(name);
+        System.out.println(name.get(0));
+        System.out.println(name.get(3));
+
+        // OR
+        System.out.println(name.getFirst());
+        System.out.println(name.getLast());
         number.add(234);
 
 
