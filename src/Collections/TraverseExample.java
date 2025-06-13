@@ -1,6 +1,8 @@
 package Collections;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
 
 public class TraverseExample {
 
@@ -24,7 +26,17 @@ public class TraverseExample {
         }
 
         System.out.println("___________________________________________________________");
+        // for forward traversal
+        Iterator<String> itr = name.iterator();
 
+        while(itr.hasNext()){
+            String next = itr.next();
+            System.out.println(next);
+        }
+
+       System.out.println("_____________________________________________________________");
+       // for backward Traversal
+       ListIterator<String> list = name.listIterator();
 
     }
 }
