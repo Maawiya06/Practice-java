@@ -34,9 +34,18 @@ public class TraverseExample {
             System.out.println(next);
         }
 
-       System.out.println("_____________________________________________________________");
+       System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
        // for backward Traversal
-       ListIterator<String> list = name.listIterator();
+       ListIterator<String> list = name.listIterator(name.size());
+       while(list.hasPrevious()){
+           String previous = list.previous();
+           System.out.println(previous);
+       }
 
+       System.out.println("================================================================");
+       // for each
+        name.forEach(str->{
+            System.out.println(str);
+        });
     }
 }
