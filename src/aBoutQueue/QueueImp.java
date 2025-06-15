@@ -19,5 +19,16 @@ public class QueueImp {
             System.out.println("Queue is not empty");
         }
 
+        q.remove(5);
+        System.out.println(q.size());
+
+        q.add(10);
+        q.add(20);
+        q.add(30);
+
+        System.out.println(q);
+
+        System.out.println("First element is " + q.peek());
+        System.out.println("Last Element is " + ((LinkedList<Integer>) q).peekLast());
     }
 }
