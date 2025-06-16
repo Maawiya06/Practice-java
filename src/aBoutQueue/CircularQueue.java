@@ -58,4 +58,11 @@ public class CircularQueue {
             front++;
         }
     }
+
+    void print(){
+        System.out.println("Printing Queue: ");
+        for(int i = 0; i < size; i++){
+            System.out.println(Array[i] + " ");
+        }
+    }
 }
