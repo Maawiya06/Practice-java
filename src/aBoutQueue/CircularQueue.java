@@ -2,7 +2,9 @@ package aBoutQueue;
 
 
 import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
 
 public class CircularQueue {
     int[] Array;
@@ -70,7 +72,7 @@ public class CircularQueue {
     }
 
     public static void main(String args[]){
-        Queue<Integer> q = new ArrayDeque<>(5);
+        Queue<Integer> q = new ArrayBlockingQueue<>(5);
         q.add(10);
         System.out.println(q);
         q.add(20);
@@ -80,6 +82,13 @@ public class CircularQueue {
         q.add(40);
         System.out.println(q);
         q.add(50);
+        System.out.println(q);
+
+        q.remove();
+        q.remove();
+        q.remove();
+        System.out.println(q);
+        q.add(100);
         System.out.println(q);
     }
 }
