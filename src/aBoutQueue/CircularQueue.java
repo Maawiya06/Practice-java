@@ -21,7 +21,7 @@ public class CircularQueue {
 
     void push(int val){
         //overflow
-        if(front == 0 && rear == size - 1){
+        if((front == 0 && rear == size - 1) || (rear == front - 1)){
             System.out.println("Queue Overflow");
         }
         // empty queue
