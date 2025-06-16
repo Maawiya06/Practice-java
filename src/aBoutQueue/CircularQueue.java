@@ -1,6 +1,9 @@
 package aBoutQueue;
 
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class CircularQueue {
     int[] Array;
     int size;
@@ -64,5 +67,19 @@ public class CircularQueue {
         for(int i = 0; i < size; i++){
             System.out.println(Array[i] + " ");
         }
+    }
+
+    public static void main(String args[]){
+        Queue<Integer> q = new ArrayDeque<>(5);
+        q.add(10);
+        System.out.println(q);
+        q.add(20);
+        System.out.println(q);
+        q.add(30);
+        System.out.println(q);
+        q.add(40);
+        System.out.println(q);
+        q.add(50);
+        System.out.println(q);
     }
 }
