@@ -24,6 +24,9 @@ public class ThreadOp {
 
         }
 
+        // get Id
+        System.out.println(t.getId());
+
         System.out.println("Program Ended...");
     }
 }
