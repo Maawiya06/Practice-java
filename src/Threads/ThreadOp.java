@@ -11,6 +11,11 @@ public class ThreadOp {
         Thread t = Thread.currentThread();
         String tname = t.getName();
         System.out.println("Current Running Thread is : " + tname);
+
+        // setName
+        t.setName("MyMain");
+        System.out.println(t.getName());
+
         System.out.println("Program Ended...");
     }
 }
