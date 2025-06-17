@@ -21,6 +21,11 @@ public class Threads1 implements Runnable{
         // create object of my Threads1 class
         Threads1 t = new Threads1();
         Thread thr = new Thread(t);
+
+        // object of Threads2
+        Threads2 t1 = new Threads2();
+
         thr.start();
+        t1.start();
     }
 }
