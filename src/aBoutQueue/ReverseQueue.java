@@ -25,6 +25,30 @@ public class ReverseQueue {
         }
     }
 
+    static void ReverseFirstK(Queue<Integer> q, int k) {
+        Stack<Integer> st = new Stack<>();
+        int n = q.size();
+
+        // Push first K elements in the stack
+        for (int i = 0; i < k; i++) {
+            int temp = q.poll();
+            st.push(temp); // Fix: you were adding back to queue instead of pushing to stack
+        }
+
+        // Push all k elements from the stack back into the queue
+        while (!st.isEmpty()) {
+            int temp = st.pop(); // Fix: should pop from stack
+            q.add(temp);         // Fix: add to queue
+        }
+
+        // Pop and push first (n-k) elements into queue again to retain original order
+        for (int i = 0; i < (n - k); i++) {
+            int temp = q.poll();
+            q.add(temp);
+        }
+    }
+
+
     public static void main(String args[]) {
 
         Queue<Integer> q = new ArrayBlockingQueue<>(10);
@@ -36,7 +60,9 @@ public class ReverseQueue {
         q.add(50);
         q.add(60);
 
-        reverseQueue(q);
+//        reverseQueue(q);
+
+        ReverseFirstK(q, 4);
 
         System.out.println("Queue is Printing: ");
         while (!q.isEmpty()) {
