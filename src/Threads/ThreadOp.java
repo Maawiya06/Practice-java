@@ -1,5 +1,11 @@
 package Threads;
 
+class UserThread extends Thread{
+    public void run(){
+        System.out.println("This is user defined Thread");
+    }
+}
+
 public class ThreadOp {
     public static void main(String args[]) throws InterruptedException {
         System.out.println("Program Started...");
@@ -27,6 +33,10 @@ public class ThreadOp {
         // get Id
         System.out.println(t.getId());
 
+        // going to start user defined Thread
+
         System.out.println("Program Ended...");
+        UserThread t2 = new UserThread();
+        t2.start();
     }
 }
