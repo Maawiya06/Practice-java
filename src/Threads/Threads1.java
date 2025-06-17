@@ -11,8 +11,8 @@ public class Threads1 implements Runnable{
             // with the hlp of try catch
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+            } catch (Exception e) {
+//                throw new RuntimeException(e);
             }
         }
     }
