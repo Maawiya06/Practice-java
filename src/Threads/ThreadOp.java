@@ -1,7 +1,7 @@
 package Threads;
 
 public class ThreadOp {
-    public static void main(String args[]){
+    public static void main(String args[]) throws InterruptedException {
         System.out.println("Program Started...");
 
         int X = 78 + 90;
@@ -15,6 +15,14 @@ public class ThreadOp {
         // setName
         t.setName("MyMain");
         System.out.println(t.getName());
+
+        // sleep
+        try{
+            Thread.sleep(5000);
+        }
+        catch (Exception e){
+
+        }
 
         System.out.println("Program Ended...");
     }
