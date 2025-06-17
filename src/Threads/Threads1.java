@@ -7,6 +7,13 @@ public class Threads1 implements Runnable{
         // task for thread;
         for(int i = 0; i <= 10; i++){
             System.out.println("Value of I is " + i);
+
+            // with the hlp of try catch
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
