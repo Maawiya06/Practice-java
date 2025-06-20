@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class FirstUniqueCharInString {
     public static void main(String args[]) {
-        String str = "ababc";
+        String str = "facfdcad";
         Queue<Character> q = new LinkedList<>();
         int[] freq = new int[26];
 
