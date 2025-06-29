@@ -1,5 +1,7 @@
 package BianryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 class Node {
@@ -85,6 +87,26 @@ public class ImpBinaryTree {
         preOrderTraversal(root.right);
         // N
         System.out.println(root.data + " ");
+    }
+
+    static void levelOrderTraversal(Node root){
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+
+        while(!q.isEmpty()){
+            Node peek = q.peek();
+            q.remove();
+
+            System.out.println(peek.data);
+
+            if(peek.left != null){
+                q.add(peek.left);
+            }
+            if(peek.right != null){
+                q.add(peek.right);
+            }
+        }
+
     }
     public static void main(String[] args) {
         Node root = createTree();
