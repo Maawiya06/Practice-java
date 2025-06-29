@@ -39,7 +39,7 @@ public class ImpBinaryTree {
         return newNode;
     }
 
-    void preOrderTraversal(Node root){
+    static void preOrderTraversal(Node root){
 
         //base case
         if(root == null){
@@ -89,5 +89,7 @@ public class ImpBinaryTree {
     public static void main(String[] args) {
         Node root = createTree();
         System.out.println("Binary tree created successfully.");
+
+        preOrderTraversal(root);
     }
 }
