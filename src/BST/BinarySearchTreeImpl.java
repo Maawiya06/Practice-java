@@ -73,6 +73,30 @@ public class BinarySearchTreeImpl {
         }
     }
 
+    void preorder(Node root){
+        if(root == null) return;
+
+        System.out.println(root.data);
+        preorder(root.left);
+        preorder(root.right);
+    }
+
+    void inorder(Node root){
+        if(root == null) return;
+
+        inorder(root.left);
+        System.out.println(root.data);
+        inorder(root.right);
+    }
+
+    void postorder(Node root){
+        if(root == null) return;
+
+        postorder(root.left);
+        postorder(root.right);
+        System.out.println(root.data);
+    }
+
     public static void main(String args[]) {
         Node root = null;
         root = crateBST(root); // <-- must assign the returned root
@@ -80,5 +104,8 @@ public class BinarySearchTreeImpl {
         BinarySearchTreeImpl bst = new BinarySearchTreeImpl();
         System.out.println("Level Order Traversal:");
         bst.levelOrderTraversal(root);
+        bst.inorder(root);
+        bst.preorder(root);
+        bst.postorder(root);
     }
 }
