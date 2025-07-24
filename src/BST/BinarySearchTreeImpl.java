@@ -104,8 +104,11 @@ public class BinarySearchTreeImpl {
         BinarySearchTreeImpl bst = new BinarySearchTreeImpl();
         System.out.println("Level Order Traversal:");
         bst.levelOrderTraversal(root);
+        System.out.println("inorder : ");
         bst.inorder(root);
+        System.out.println("preorder : ");
         bst.preorder(root);
+        System.out.println("postorder : ");
         bst.postorder(root);
     }
 }
