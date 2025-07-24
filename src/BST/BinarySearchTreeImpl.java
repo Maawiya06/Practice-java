@@ -110,6 +110,7 @@ public class BinarySearchTreeImpl {
         return temp;
     }
 
+    // search in BST
     boolean SearchInBST(Node root, int target){
         // base case
         if(root == null){
