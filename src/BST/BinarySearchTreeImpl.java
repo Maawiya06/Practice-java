@@ -30,7 +30,7 @@ public class BinarySearchTreeImpl {
         } else {
             root.left = insertIntoBST(root.left, data);
         }
-        return root; // <-- missing return for the recursive update
+        return root;
     }
 
     static Node crateBST(Node root) {
@@ -39,8 +39,8 @@ public class BinarySearchTreeImpl {
         int data = sc.nextInt();
 
         while (data != -1) {
-            root = insertIntoBST(root, data); // <-- store updated root
-            data = sc.nextInt();              // <-- read next value
+            root = insertIntoBST(root, data);
+            data = sc.nextInt();
         }
         return root;
     }
