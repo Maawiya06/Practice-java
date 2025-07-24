@@ -110,6 +110,27 @@ public class BinarySearchTreeImpl {
         return temp;
     }
 
+    boolean SearchInBST(Node root, int target){
+        // base case
+        if(root == null){
+            return false;
+        }
+        if(root.data == target){
+            return true;
+        }
+
+        // baki recursion
+        boolean leftAns = false;
+        boolean rightAns = false;
+        if(target > root.data){
+             rightAns = SearchInBST(root.right, target);
+        }
+        else {
+            leftAns = SearchInBST(root.left, target);
+        }
+
+        return leftAns || rightAns;
+    }
     public static void main(String args[]) {
         Node root = null;
         root = crateBST(root);
@@ -131,5 +152,6 @@ public class BinarySearchTreeImpl {
         else{
             System.out.println("Min Value is : " + minNode);
         }
+
     }
 }
