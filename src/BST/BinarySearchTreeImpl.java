@@ -97,9 +97,22 @@ public class BinarySearchTreeImpl {
         System.out.println(root.data);
     }
 
+    // min value of the BST
+    static Node minvalue(Node root){
+        if(root == null){
+            System.out.println("No Min Value : ");
+            return null;
+        }
+        Node temp = root;
+        while(temp.left != null){
+            temp = temp.left;
+        }
+        return temp;
+    }
+
     public static void main(String args[]) {
         Node root = null;
-        root = crateBST(root); // <-- must assign the returned root
+        root = crateBST(root);
 
         BinarySearchTreeImpl bst = new BinarySearchTreeImpl();
         System.out.println("Level Order Traversal:");
@@ -110,5 +123,13 @@ public class BinarySearchTreeImpl {
         bst.preorder(root);
         System.out.println("postorder : ");
         bst.postorder(root);
+
+        Node minNode = minvalue(root);
+        if(minNode == null){
+            System.out.println("There is No Node in Tree : ");
+        }
+        else{
+            System.out.println("Min Value is : " + minNode);
+        }
     }
 }
