@@ -110,6 +110,19 @@ public class BinarySearchTreeImpl {
         return temp;
     }
 
+
+    static Node maxvalue(Node root){
+        if(root == null){
+            System.out.println("No Min Value : ");
+            return null;
+        }
+        Node temp = root;
+        while(temp.right != null){
+            temp = temp.right;
+        }
+        return temp;
+    }
+
     // search in BST
     boolean SearchInBST(Node root, int target){
         // base case
@@ -131,6 +144,52 @@ public class BinarySearchTreeImpl {
         }
 
         return leftAns || rightAns;
+    }
+
+
+    // delete fro BST
+    static <delete> Node DeleteFromBST(Node root, int target){
+        // target to dhoondo
+        // target ko delete kro
+        if(root == null){
+            return null;
+        }
+
+        if(root.data == target) {
+            // delete here
+            // 4 cases
+            if(root.left == null && root.right == null){\
+                delete root;
+                return null;
+            }
+
+            else if(root.left != null && root.right == null){
+                Node childsubTree = root.left;
+                delete root;
+                return childsubTree;
+            }
+
+            else if(root.left == null && root.right != null){
+                Node childsubTree = root.right;
+                delete root;
+                return childsubTree;
+            }
+
+            // delete the main root where left and right subtree both havse
+            else{
+
+            }
+        }
+
+        else if(root.data > target){
+            // left
+            return DeleteFromBST(root.left, target);
+        }
+        else {
+            // right
+            return DeleteFromBST(root.right, target);
+        }
+        return root;
     }
     public static void main(String args[]) {
         Node root = null;
