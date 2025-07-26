@@ -148,70 +148,73 @@ public class BinarySearchTreeImpl {
 
 
     // delete fro BST
-    static <delete> Node DeleteFromBST(Node root, int target){
-        // target to dhoondo
-        // target ko delete kro
-        if(root == null){
+    static Node DeleteFromBST(Node root, int target) {
+        if (root == null) {
             return null;
         }
 
-        if(root.data == target) {
-            // delete here
-            // 4 cases
-            if(root.left == null && root.right == null){\
-                delete root;
+        if (root.data == target) {
+            // Case 1: No child
+            if (root.left == null && root.right == null) {
                 return null;
             }
-
-            else if(root.left != null && root.right == null){
+            // Case 2: Only left child
+            else if (root.left != null && root.right == null) {
                 Node childsubTree = root.left;
-                delete root;
                 return childsubTree;
             }
-
-            else if(root.left == null && root.right != null){
+            // Case 3: Only right child
+            else if (root.left == null && root.right != null) {
                 Node childsubTree = root.right;
-                delete root;
                 return childsubTree;
             }
-
-            // delete the main root where left and right subtree both havse
-            else{
-
+            // Case 4: Two children
+            else {
+                Node maxi = maxvalue(root.left);
+                root.data = maxi.data;
+                root.left = DeleteFromBST(root.left, maxi.data); // fix: should delete `maxi.data`, not `target`
             }
         }
-
-        else if(root.data > target){
-            // left
-            return DeleteFromBST(root.left, target);
+        else if (root.data > target) {
+            root.left = DeleteFromBST(root.left, target);
         }
         else {
-            // right
-            return DeleteFromBST(root.right, target);
+            root.right = DeleteFromBST(root.right, target);
         }
+
         return root;
     }
+
     public static void main(String args[]) {
         Node root = null;
-        root = crateBST(root);
+        root = crateBST(root); // Make sure this method creates the BST correctly
 
         BinarySearchTreeImpl bst = new BinarySearchTreeImpl();
+
         System.out.println("Level Order Traversal:");
         bst.levelOrderTraversal(root);
-        System.out.println("inorder : ");
+
+        System.out.println("Inorder : ");
         bst.inorder(root);
-        System.out.println("preorder : ");
+
+        System.out.println("Preorder : ");
         bst.preorder(root);
-        System.out.println("postorder : ");
+
+        System.out.println("Postorder : ");
         bst.postorder(root);
 
         Node minNode = minvalue(root);
         if(minNode == null){
             System.out.println("There is No Node in Tree : ");
-        }
-        else{
-            System.out.println("Min Value is : " + minNode);
+        } else {
+            System.out.println("Min Value is : " + minNode.data); // fixed to show value
         }
 
+        // 🔽 Call deletion here
+        int valueToDelete = 80; // change this to the value you want to delete
+        root = DeleteFromBST(root, valueToDelete);
+        System.out.println("After Deletion of " + valueToDelete + " :");
+        bst.inorder(root); // verify deletion by re-printing inorder
     }
+
 }
