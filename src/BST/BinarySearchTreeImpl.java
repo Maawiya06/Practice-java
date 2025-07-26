@@ -210,11 +210,11 @@ public class BinarySearchTreeImpl {
             System.out.println("Min Value is : " + minNode.data); // fixed to show value
         }
 
-        // 🔽 Call deletion here
-        int valueToDelete = 80; // change this to the value you want to delete
+
+        int valueToDelete = 80;
         root = DeleteFromBST(root, valueToDelete);
         System.out.println("After Deletion of " + valueToDelete + " :");
-        bst.inorder(root); // verify deletion by re-printing inorder
+        bst.inorder(root);
     }
 
 }
