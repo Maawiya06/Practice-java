@@ -185,6 +185,12 @@ public class BinarySearchTreeImpl {
         return root;
     }
 
+    void convertBSTtoDLL(Node root, Node head){
+        if(root == null) return;
+
+
+    }
+
     public static void main(String args[]) {
         Node root = null;
         root = crateBST(root); // Make sure this method creates the BST correctly
