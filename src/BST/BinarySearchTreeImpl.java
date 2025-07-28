@@ -204,6 +204,13 @@ public class BinarySearchTreeImpl {
         convertBSTtoDLL(root.left, head);
     }
 
+    void printLL(Node head){
+        Node temp = head;
+        while(temp != null){
+            temp = temp.right;
+        }
+    }
+
     public static void main(String args[]) {
         Node root = null;
         root = crateBST(root); // Make sure this method creates the BST correctly
