@@ -188,7 +188,19 @@ public class BinarySearchTreeImpl {
     void convertBSTtoDLL(Node root, Node head){
         if(root == null) return;
 
+        // RNL
 
+        convertBSTtoDLL(root.right, head);
+
+        //N
+        root.right = head;
+        if(head != null){
+            head.left = root;
+        }
+        head = root;
+
+
+        convertBSTtoDLL(root.left, head);
     }
 
     public static void main(String args[]) {
