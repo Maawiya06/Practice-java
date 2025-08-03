@@ -18,6 +18,12 @@ public class mapImple {
 
         // gainig some key values
         System.out.println(mapping.get("Love"));
+
+        // size in map
+        System.out.println(mapping.size());
+
+        // searching key
+        System.out.println(mapping.containsKey("Love"));
     }
 }
 
