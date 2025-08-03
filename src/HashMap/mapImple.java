@@ -24,6 +24,8 @@ public class mapImple {
 
         // searching key
         System.out.println(mapping.containsKey("Love"));
+        System.out.println(mapping.containsKey("Gaurav"));
+        System.out.println(mapping.size());
     }
 }
 
