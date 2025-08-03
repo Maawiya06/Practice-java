@@ -15,6 +15,9 @@ public class mapImple {
 
         // print to verify
         System.out.println(mapping);
+
+        // gainig some key values
+        System.out.println(mapping.get("Love"));
     }
 }
 
