@@ -78,6 +78,28 @@ public class Tries {
     }
 
 
+    static void deletion(Tries root, String word){
+
+        // base case
+        if(word.length() == 0){
+            root.isTerminal = false;
+            return;
+        }
+
+        char ch = Character.toLowerCase(word.charAt(0));
+        int index = ch - 'a';
+        Tries child;
+
+        if(root.children[index] != null){
+            //present
+            child = root.children[index];
+        }
+        else{
+            return;
+        }
+        //resursion
+        deletion(child, word.substring(1));
+    }
     public static void main(String args[]){
         Tries root = new Tries('-');
 
@@ -96,6 +118,7 @@ public class Tries {
 
         System.out.println("Insertion Done");
 
+        // call search function
         if(SearchWord(root, "loved")){
             System.out.println("Found");
         }
@@ -103,6 +126,15 @@ public class Tries {
             System.out.println("Not Found");
         }
 
+        // call deletion
+        deletion(root, "loved");
+
+        if(SearchWord(root, "loved")){
+            System.out.println("Found");
+        }
+        else{
+            System.out.println("Not Found");
+        }
         // no return needed
     }
 }
